@@ -9,35 +9,28 @@
 
     <title>OlympikeSoft Startup</title>
 
-    <!-- Bootstrap Core CSS -->
     <link href="https://olympikesoft.com/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
     <link href="https://olympikesoft.com/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
 
-    <!-- Theme CSS -->
     <link href="https://olympikesoft.com/css/agency.min.css" rel="stylesheet">
      <link href="https://olympikesoft.com/css/signup.css"  rel="stylesheet" type="text/css"/>
 
       <link href="https://olympikesoft.com/css/style_min.css" rel="stylesheet">
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
 
 
 <script>
-// When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
@@ -48,7 +41,6 @@ function scrollFunction() {
     }
 }
 
-// When the user clicks on the button, scroll to the top of the document
 function topFunction() {
     document.body.scrollTop = 0; // For Chrome, Safari and Opera
     document.documentElement.scrollTop = 0; // For IE and Firefox
@@ -60,7 +52,6 @@ function topFunction() {
 <body id="page-top" class="index">
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
@@ -70,7 +61,6 @@ function topFunction() {
 
 
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
@@ -120,9 +110,7 @@ function topFunction() {
 
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container-fluid -->
     </nav>
 
 
@@ -143,14 +131,20 @@ function topFunction() {
                          @foreach ($posts as $post)
                               <div class="col-md-3 col-sm-4 col-xs-12 single_portfolio_text">
                                    <img src="{{$post->image}}" alt="" />
-                                   <div class="portfolio_images_overlay text-center">
                                        <h6>{{ $post->title}}</h6>
+
                                      <!---<p class="product_price"> ></p>--->
+                                     <span class="pull-right"
+                                       {{$post->datetime}}
+                                     </span>
                                        <a href="/posts/{{$post->id}}" class="btn btn-primary">+</a>
+
                                    </div>
-                               </div>
+
+
 
                                @endforeach
+                                </div>
 
                            </div>
                            </div>

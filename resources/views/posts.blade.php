@@ -117,7 +117,7 @@
             <textarea class="form-control" rows="3" name="text" required></textarea>
           </div>
            <input type="hidden" name="user_id" value="<?php echo e(Auth::user()->id);?>">
-           <input type="hidden" name="post_id" value="{{$post->id}}">
+           <input type="hidden" name="post_id" value="{{$posts->id}}">
           <button type="submit" class="btn btn-success">Submit</button>
         </form>
         <br><br>

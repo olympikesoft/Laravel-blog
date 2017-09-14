@@ -6,7 +6,7 @@ use DB;       // ******** This Line *********
 
 Class Posts Extends Eloquent{
 protected $table = 'posts';
-protected $fillable = array('id,title, image, text, user_id');
+protected $fillable = array('id,title, image, text, user_id, datetime');
 public $timestamps = false;
 
 /*public function users() {

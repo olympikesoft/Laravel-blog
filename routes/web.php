@@ -17,9 +17,25 @@
 Route::post('/insert_comment','CommentController@postSubmit');
 
 
+Route::post('/edit/{id}','PostsController@editpost');
+
+
 Route::get('/blogs','PostsController@paginationPosts');
 
 Route::get('/posts/{id}','PostsController@showPage');
+Route::get('/posts/remove/{id}','PostsController@destroy');
+Route::get('/posts/edit/{id}','PostsController@updatePost');
+
+
+Route::post('/create/post', 'PostsController@insert_post');
+
+/*Remove post*/
+
+Route::get('/post/create', function()
+{
+  return View::make('posts.create');
+});
+
 
 /*Route::get('/search/{search}', function($search){
 
@@ -34,10 +50,6 @@ Route::get('/', 'ProjectsController@paginationProjects');
 
 
 
-Route::get('/home', function()
-{
-  echo "Hello";
-});
 
 /*
 Route::post('/search',function(){
@@ -52,7 +64,6 @@ Route::post('/search',function(){
 
 Route::post('/subscribers', 'SubscribersController@postSubmit');
 
-
 /*Send with Username
 Route::get('/','PostsController@getAllPosts');*/
 
@@ -61,6 +72,9 @@ Route::post("/insert_comment", 'CommentController@postSubmit');
 /*
 Route::get('/', 'PostsController@index');*/
 
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home','PostsController@getAllPosts');
+
+/*Route::get('/home', 'HomeController@index')->name('home');*/
